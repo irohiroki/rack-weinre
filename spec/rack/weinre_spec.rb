@@ -1,11 +1,12 @@
 require 'spec_helper'
 
 describe Rack::Weinre do
-  let(:rack)   { described_class.new(app) }
-  let(:app)    { double('app').tap{|a| a.stub(:call).and_return(app_res) } }
-  let(:app_res){ [200, {'Content-Type' => 'text/html'}, ['<html><head></head></html>']] }
+  before do
+    rackup
+  end
 
   it "passes through" do
-    rack.call({}).should == app_res
+    visit '/'
+    page.should have_css 'html head'
   end
 end

@@ -14,5 +14,6 @@ Gem::Specification.new do |gem|
   gem.name          = "rack-weinre"
   gem.require_paths = ["lib"]
   gem.version       = Rack::Weinre::VERSION
+  gem.add_development_dependency "capybara", "~> 1.1.2"
   gem.add_development_dependency "rspec", "~> 2.9.0"
 end
