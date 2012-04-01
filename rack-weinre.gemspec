@@ -4,9 +4,9 @@ require File.expand_path('../lib/rack/weinre/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Hiroki Yoshioka"]
   gem.email         = ["irohiroki@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{rack-weinre inserts a script tag that loads a weinre target js into html files.}
+  gem.summary       = %q{A rack middleware for Weinre remote debugger.}
+  gem.homepage      = "https://github.com/irohiroki/rack-weinre"
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
