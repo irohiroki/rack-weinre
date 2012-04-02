@@ -13,6 +13,12 @@ describe Rack::Weinre do
 
   context "when response type is text/html" do
     it { should have_css 'head script[src="http://www.example.com:8080/target/target-script-min.js#anonymous"]' }
+
+    context "and Content-Length is given" do
+      let(:body){ '<!DOCTYPE html><html><head><title>foo</title></head><body>bar</body></html>' }
+      let(:app){ stub_app(:headers => {'Content-Length' => body.size.to_s}, :body => [body]) }
+      it { expect{ subject }.not_to raise_error }
+    end
   end
 
   context "when response type is not text/html" do
