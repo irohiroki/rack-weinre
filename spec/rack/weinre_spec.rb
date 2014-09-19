@@ -15,7 +15,7 @@ describe Rack::Weinre do
     it { should have_css 'head script[src="http://www.example.com:8080/target/target-script-min.js#anonymous"]' }
 
     context "and Content-Length is given" do
-      let(:body){ '<!DOCTYPE html><html><head><title>foo</title></head><body>bar</body></html>' }
+      let(:body){ '<!DOCTYPE html><html><head><title>マルチバイト</title></head><body>bar</body></html>' }
       let(:app){ stub_app(:headers => {'Content-Length' => body.size.to_s}, :body => [body]) }
       it { expect{ subject }.not_to raise_error }
     end
