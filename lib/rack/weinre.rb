@@ -15,7 +15,7 @@ module Rack
             end
             orig.close if orig.respond_to?(:close)
 
-            res[1]['Content-Length'] = body.join.size.to_s if res[1]['Content-Length']
+            res[1]['Content-Length'] = body.join.bytesize.to_s if res[1]['Content-Length']
           end
         end
       else
