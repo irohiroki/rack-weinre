@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rack-weinre (1.0.0)
+    rack-weinre (1.0.2)
 
 GEM
   remote: http://rubygems.org/
